@@ -91,6 +91,23 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
+  Product
+  .destroy({
+    where : {
+      id : req.params.id
+    }
+  })
+  .then(productData => {
+    if (!productData)
+    {
+      res.status(404).json({message : 'No category found with this ID'});
+      return;
+    }
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
 });
 
 module.exports = router;
