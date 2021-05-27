@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Category, Product } = require('../../models');
+const { where } = require('sequelize/types');
+const { Category, Product, ProductTag } = require('../../models');
 const { findAll } = require('../../models/Product');
 
 // The `/api/categories` endpoint
@@ -9,7 +10,7 @@ router.get('/', (req, res) => {
   // be sure to include its associated Products
   router.get('/', (req, res) => {
     Category
-    .findAll()
+    .findAll({ include : [Product] })
     .then (categoryData => res.json(categoryData))
     .catch(err => {
       console.log(err);
@@ -21,6 +22,27 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
+  Category
+  .findOne({ 
+    include : [Product],
+    where : {
+      id : req.params.id
+    } 
+  })
+  .then (categoryData => {
+    if (!categoryData)
+    {
+      res.status(404).json({message : 'No category found with this ID'});
+      return;
+    }
+
+    res.json(categoryData);
+
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
 
 });
 
