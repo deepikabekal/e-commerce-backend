@@ -40,6 +40,7 @@ mysql -u root -p
 ```
 source db/schema.sql
 USE ecommerce_db;
+```
 10. Exit the MySQL shell by running the below command.
 ```
 exit
