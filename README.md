@@ -7,7 +7,7 @@
 * [Installation](#installation)
 * [Usage](#usage)
 * [Preview](#preview)
-* [Technologies] (#technologies)
+* [Techologies Used](#technologiesused)
 * [User Story](#userstory)
 * [Acceptance Criteria](#acceptancecriteria)
 * [Contributing](#contributing)
