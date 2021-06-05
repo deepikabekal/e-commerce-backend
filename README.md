@@ -61,10 +61,10 @@ node server.js
 ## Preview
 
 
-##Technologies
-ExpressJS
-MySQL2
-Sequelize
+## Technologies
+* ExpressJS
+* MySQL2
+* Sequelize
 
 
 ## User Story
