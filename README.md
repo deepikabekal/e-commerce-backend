@@ -11,7 +11,6 @@ Back end for an e-commerce site with working Express.js API that uses Sequelize 
 * [User Story](#userstory)
 * [Acceptance Criteria](#acceptancecriteria)
 * [Contributing](#contributing)
-* [Questions](#questions)
 
 ## Installation
 1. Make sure to have MySQL, Insomnia or Postman installed.
